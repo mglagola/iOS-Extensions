@@ -5,3 +5,5 @@
 #import "UIView+Xib.h"
 #import "UIViewController+Xib.h"
 #import "UIDevice+isIPAD.h"
+#import "NSString+KeyPath.h"
+#import "NSManagedObject+Map.h" //need core data for this import 
