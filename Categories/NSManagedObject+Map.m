@@ -1,6 +1,6 @@
 //
 //  NSManagedObject+Map.m
-//  Grubbr
+//  
 //
 //  Created by Mark Glagola on 6/22/13.
 //  Copyright (c) 2013 Mark Glagola. All rights reserved.
@@ -20,7 +20,7 @@
 + (instancetype) objectWithJSON:(id)json primaryKey:(NSString*)primaryKey map:(NSDictionary*)map context:(NSManagedObjectContext*)context {
     NSString *mapPrimaryKey  = [[map allKeysForObject:primaryKey] lastObject];
     id primaryValue = [mapPrimaryKey isKeyPath] ? [json valueForKeyPath:mapPrimaryKey] : [json valueForKey:mapPrimaryKey];
-    NSManagedObject *object = [self objectWithPrimaryKey:primaryKey primaryValue:primaryValue];
+    NSManagedObject *object = [self objectWithPrimaryKey:primaryKey primaryValue:primaryValue context:context];
     
     if (!object) {
         object = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
