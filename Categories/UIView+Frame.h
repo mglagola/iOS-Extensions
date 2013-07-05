@@ -19,4 +19,7 @@
 
 @property (nonatomic) CGSize size;
 
+@property (nonatomic) CGFloat centerX;
+@property (nonatomic) CGFloat centerY;
+
 @end
