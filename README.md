@@ -137,7 +137,7 @@ Use the `.` separator to suggest key path values. See example below.
             "referralId":"v-1373042971"
          }
 */
-+ (instancetype) venueWithJSON:(NSArray\*)json context:(NSManagedObjectContext\*)context {
++ (instancetype) venueWithJSON:(NSArray*)json context:(NSManagedObjectContext*)context {
     
     NSDictionary *map = @{
                           @"id" : kVenuePrimaryKey,
@@ -162,7 +162,7 @@ Use the `.` separator to suggest key path values. See example below.
 
 You can also fetch an object based on its primary key value via:
 ```objc
-+ (instancetype) objectWithPrimaryKey:(NSString\*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext\*)context
++ (instancetype) objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context
 ```
 
 #### NSString+KeyPath
