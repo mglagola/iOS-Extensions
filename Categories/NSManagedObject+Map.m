@@ -13,7 +13,7 @@
 
 + (instancetype) objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([self class])];
-    request.predicate = [NSPredicate predicateWithFormat:@"%@ == %@",primaryKey, primaryValue];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K == %@",primaryKey, primaryValue];
     return [[context executeFetchRequest:request error:nil] lastObject];
 }
 
