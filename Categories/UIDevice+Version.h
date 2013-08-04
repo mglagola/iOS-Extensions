@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIDevice (isIPAD)
+@interface UIDevice (Version)
 
 + (BOOL) isIPAD;
++ (float) currentVersion;
++ (BOOL) isBelowiOS7;
 
 @end
