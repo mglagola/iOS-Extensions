@@ -6,4 +6,5 @@
 #import "UIViewController+Xib.h"
 #import "UIDevice+Version.h"
 #import "NSString+KeyPath.h"
-#import "NSManagedObject+Map.h" //need core data for this import 
+#import "NSManagedObject+Map.h" //need core data for this import
+#import "UIColor+RGB255.h"
