@@ -11,11 +11,11 @@
 @implementation UIScreen (Frame)
 
 + (CGFloat) biggerSide:(CGSize)size {
-    return size.width > size.height ? size.width : size.height;
+    return MAX(size.width, size.height);
 }
 
 + (CGFloat) smallerSide:(CGSize)size {
-    return size.width > size.height ? size.height : size.width;
+    return MIN(size.width, size.height);
 }
 
 //assumes landscape always has bigger width than height
