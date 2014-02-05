@@ -14,5 +14,4 @@
 
 + (instancetype) objectWithJSON:(id)json primaryKey:(NSString*)primaryKey map:(NSDictionary*)map context:(NSManagedObjectContext*)context;
 
-
 @end
