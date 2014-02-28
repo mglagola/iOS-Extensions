@@ -9,12 +9,13 @@ A library of useful extensions.  Contains a lot of boiler plate code for iOS pro
 `UIView+Xib{.h,.m}`
 `UIViewController+Xib{.h,.m}`
 `NSManagedObject+Map{.h,.m}`
+`NSManagedObject+Extension{.h,.m}`
 `NSString+KeyPath{.h,.m}`
 
 #### UIDevice+isIPAD
 This extension makes it easy to check if device is an iPad
 ```objc
-[UIDevice isIPAD];
+[UIDevice MG_isIPAD];
 ```
 
 #### UILabel+Font
@@ -27,7 +28,7 @@ This extension makes it easy to set/get font and fontSize
 #### UIScreen+Frame
 This extension makes it easy to get the correct screen size based on the device's orientation.
 ```objc
-+ (CGRect) screenRect;
++ (CGRect) MG_screenRect;
 ```
 
 #### UIView+Frame
@@ -61,13 +62,13 @@ self.view.x = 50.0f;
 #### UIView+Xib
 This extension makes it easy to init UIViews from Xibs.
 ```objc
-- (id) initWithNib;
+- (id) MG_initWithNib;
 ```
 
 #### UIViewController+Xib
 Like *UIView+Xib*, This extension *also* makes it easy to init UIViewControllers from Xibs.
 ```objc
-- (id) initWithNib;
+- (id) MG_initWithNib;
 ```
 
 #### NSManagedObject+Map
@@ -156,18 +157,21 @@ Use the `.` separator to suggest key path values. See example below.
                           @"location.cc": @"cc",
                           };
     
-    return [self objectWithJSON:json primaryKey:kVenuePrimaryKey map:map context:context];    
+    return [self MG_objectWithJSON:json primaryKey:kVenuePrimaryKey map:map context:context];    
 }
 ```
 
 You can also fetch an object based on its primary key value via:
 ```objc
-+ (instancetype) objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context
++ (instancetype) MG_objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context
 ```
 
 #### NSString+KeyPath
 This extension makes it easy to check whether or not a string is a key path or not.  This was really build as a helper method for `NSManagedObject+Map` extension, but you may find it useful in other situations. 
 
 ```objc
-- (BOOL) isKeyPath;
+- (BOOL) MG_isKeyPath;
 ```
+
+## Many More
+Take a look at the header files for more methods to call
