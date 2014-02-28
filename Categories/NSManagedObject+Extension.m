@@ -57,7 +57,7 @@
 
 #pragma mark - Delete methods
 + (void) MG_deleteEntitiesWithPredicate:(NSPredicate*)predicate context:(NSManagedObjectContext*)context {
-    NSArray *entites = [self findEntitiesWithPredicate:predicate context:context];
+    NSArray *entites = [self MG_findEntitiesWithPredicate:predicate context:context];
     [entites enumerateObjectsUsingBlock:^(NSManagedObject *entity, NSUInteger idx, BOOL *stop) {
         [context deleteObject:entity];
     }];
