@@ -10,6 +10,6 @@
 
 @interface NSString (KeyPath)
 
-- (BOOL) isKeyPath;
+- (BOOL) MG_isKeyPath;
 
 @end

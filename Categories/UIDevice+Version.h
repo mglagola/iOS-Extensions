@@ -10,8 +10,8 @@
 
 @interface UIDevice (Version)
 
-+ (BOOL) isIPAD;
-+ (float) currentVersion;
-+ (BOOL) isBelowiOS7;
++ (BOOL) MG_isIPAD;
++ (float) MG_currentVersion;
++ (BOOL) MG_isBelowiOS7;
 
 @end

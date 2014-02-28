@@ -10,8 +10,8 @@
 
 @interface NSDateFormatter (Cached)
 
-+ (instancetype) dateFormatter;
++ (instancetype) MG_dateFormatter;
 
-+ (instancetype) dateFormatterWithDateFormat:(NSString*)dateFormat;
++ (instancetype) MG_dateFormatterWithDateFormat:(NSString*)dateFormat;
 
 @end

@@ -10,8 +10,8 @@
 
 @interface NSManagedObject (Map)
 
-+ (instancetype) objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context;
++ (instancetype) MG_objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context;
 
-+ (instancetype) objectWithJSON:(id)json primaryKey:(NSString*)primaryKey map:(NSDictionary*)map context:(NSManagedObjectContext*)context;
++ (instancetype) MG_objectWithJSON:(id)json primaryKey:(NSString*)primaryKey map:(NSDictionary*)map context:(NSManagedObjectContext*)context;
 
 @end

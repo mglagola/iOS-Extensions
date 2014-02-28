@@ -10,7 +10,7 @@
 
 @implementation UIViewController (Xib)
 
-- (id) initWithNib {
+- (id) MG_initWithNib {
     return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 

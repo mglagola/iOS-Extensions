@@ -10,6 +10,6 @@
 
 @interface UIView (Xib)
 
-- (id) initWithNib;
+- (id) MG_initWithNib;
 
 @end

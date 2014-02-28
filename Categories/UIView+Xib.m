@@ -10,7 +10,7 @@
 
 @implementation UIView (Xib)
 
-- (id) initWithNib {
+- (id) MG_initWithNib {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] objectAtIndex:0];
 }
 

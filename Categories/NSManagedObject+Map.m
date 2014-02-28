@@ -11,13 +11,13 @@
 
 @implementation NSManagedObject (Map)
 
-+ (instancetype) objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context {
++ (instancetype) MG_objectWithPrimaryKey:(NSString*)primaryKey primaryValue:(id)primaryValue context:(NSManagedObjectContext*)context {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([self class])];
     request.predicate = [NSPredicate predicateWithFormat:@"%K == %@",primaryKey, primaryValue];
     return [[context executeFetchRequest:request error:nil] lastObject];
 }
 
-+ (instancetype) objectWithJSON:(id)json primaryKey:(NSString*)primaryKey map:(NSDictionary*)map context:(NSManagedObjectContext*)context {
++ (instancetype) MG_objectWithJSON:(id)json primaryKey:(NSString*)primaryKey map:(NSDictionary*)map context:(NSManagedObjectContext*)context {
     NSString *mapPrimaryKey  = [[map allKeysForObject:primaryKey] lastObject];
     id primaryValue = [mapPrimaryKey isKeyPath] ? [json valueForKeyPath:mapPrimaryKey] : [json valueForKey:mapPrimaryKey];
     NSManagedObject *object = [self objectWithPrimaryKey:primaryKey primaryValue:primaryValue context:context];

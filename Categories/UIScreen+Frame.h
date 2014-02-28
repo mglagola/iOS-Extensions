@@ -12,6 +12,6 @@
 
 //assumes landscape always has bigger width than height
 //fine for now, but if apple decides to go a different route, then it wont work..
-+ (CGRect) screenRect;
++ (CGRect) MG_screenRect;
 
 @end

@@ -19,7 +19,7 @@
 }
 
 //assumes landscape always has bigger width than height
-+ (CGRect) screenRect {
++ (CGRect) MG_screenRect {
     CGRect appFrame = [[self mainScreen] bounds];
     BOOL isLandscape = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
     CGRect screenSize = appFrame;

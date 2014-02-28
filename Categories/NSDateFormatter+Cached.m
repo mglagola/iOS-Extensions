@@ -12,7 +12,7 @@ static NSString * const kDateFormatterCachedKey = @"CachedDateFormatter";
 
 @implementation NSDateFormatter (Cached)
 
-+ (instancetype) dateFormatter {
++ (instancetype) MG_dateFormatter {
     NSMutableDictionary *threadDict = [[NSThread currentThread] threadDictionary];
     NSDateFormatter *formatter = [threadDict objectForKey:kDateFormatterCachedKey];
     if (!formatter) {
@@ -24,7 +24,7 @@ static NSString * const kDateFormatterCachedKey = @"CachedDateFormatter";
     return formatter;
 }
 
-+ (instancetype) dateFormatterWithDateFormat:(NSString*)dateFormat {
++ (instancetype) MG_dateFormatterWithDateFormat:(NSString*)dateFormat {
     NSDateFormatter *formatter = [self dateFormatter];
     [formatter setDateFormat:dateFormat];
     return formatter;

@@ -10,7 +10,7 @@
 
 @implementation NSString (KeyPath)
 
-- (BOOL) isKeyPath {
+- (BOOL) MG_isKeyPath {
     return [self rangeOfString:@"."].location != NSNotFound;
 }
 

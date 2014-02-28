@@ -10,6 +10,6 @@
 
 @interface UIColor (RGB255)
 
-+ (UIColor*) color255WithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
++ (UIColor*) MG_color255WithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 
 @end

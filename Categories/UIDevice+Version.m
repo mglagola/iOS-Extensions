@@ -10,15 +10,15 @@
 
 @implementation UIDevice (Version)
 
-+ (BOOL) isIPAD {
++ (BOOL) MG_isIPAD {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 }
 
-+ (float) currentVersion {
++ (float) MG_currentVersion {
     return [[[UIDevice currentDevice] systemVersion] floatValue];
 }
 
-+ (BOOL) isBelowiOS7 {
++ (BOOL) MG_isBelowiOS7 {
     return [self currentVersion] < 7.0;
 }
 
