@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/mglagola/iOS-Extensions.git", :tag => s.version.to_s }
   s.platform     = :ios, '5.0'
   s.source_files = '*.{h,m}', 'Categories/*.{h,m}'
-  s.spec.exclude_files = 'Categories/UIViewController+Xib.{h,m}'
+  s.exclude_files = 'Categories/UIViewController+Xib.{h,m}'
   s.requires_arc = true
   s.frameworks = 'CoreData'
 end
