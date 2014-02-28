@@ -26,32 +26,32 @@
 
 
 + (NSArray*) MG_findEntitiesWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray*)sortDescriptors context:(NSManagedObjectContext *)context {
-    return [self findEntitiesWithPredicate:predicate sortDescriptors:sortDescriptors fetchLimit:0 context:context];
+    return [self MG_findEntitiesWithPredicate:predicate sortDescriptors:sortDescriptors fetchLimit:0 context:context];
 }
 
 + (NSArray*) MG_findEntitiesWithPredicate:(NSPredicate *)predicate sortBy:(NSString*)sortBy ascending:(BOOL)ascending context:(NSManagedObjectContext *)context {
     if (!sortBy)
-        return [self findEntitiesWithPredicate:predicate sortDescriptors:nil context:context];
+        return [self MG_findEntitiesWithPredicate:predicate sortDescriptors:nil context:context];
     
     NSSortDescriptor *ageDescriptor = [NSSortDescriptor sortDescriptorWithKey:sortBy ascending:ascending];
-    return [self findEntitiesWithPredicate:predicate sortDescriptors:@[ageDescriptor] context:context];
+    return [self MG_findEntitiesWithPredicate:predicate sortDescriptors:@[ageDescriptor] context:context];
 }
 
 + (NSArray*) MG_findEntitiesWithPredicate:(NSPredicate*)predicate context:(NSManagedObjectContext*)context {
-    return [self findEntitiesWithPredicate:predicate sortDescriptors:nil context:context];
+    return [self MG_findEntitiesWithPredicate:predicate sortDescriptors:nil context:context];
 }
 
 + (NSArray*) MG_findAllEntitiesSortedBy:(NSString*)sortBy ascending:(BOOL)ascending context:(NSManagedObjectContext*)context {
-    return [self findEntitiesWithPredicate:nil sortBy:sortBy ascending:ascending context:context];
+    return [self MG_findEntitiesWithPredicate:nil sortBy:sortBy ascending:ascending context:context];
 }
 
 + (NSArray*) MG_findAllEntitiesInContext:(NSManagedObjectContext*)context {
-    return [self findEntitiesWithPredicate:nil context:context];
+    return [self MG_findEntitiesWithPredicate:nil context:context];
 }
 
 
 + (instancetype) MG_findEntityWithPredicate:(NSPredicate*)predicate context:(NSManagedObjectContext*)context {
-    return [[self findEntitiesWithPredicate:predicate context:context] lastObject];
+    return [[self MG_findEntitiesWithPredicate:predicate context:context] lastObject];
 }
 
 

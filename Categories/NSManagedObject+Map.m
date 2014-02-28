@@ -19,8 +19,8 @@
 
 + (instancetype) MG_objectWithJSON:(id)json primaryKey:(NSString*)primaryKey map:(NSDictionary*)map context:(NSManagedObjectContext*)context {
     NSString *mapPrimaryKey  = [[map allKeysForObject:primaryKey] lastObject];
-    id primaryValue = [mapPrimaryKey isKeyPath] ? [json valueForKeyPath:mapPrimaryKey] : [json valueForKey:mapPrimaryKey];
-    NSManagedObject *object = [self objectWithPrimaryKey:primaryKey primaryValue:primaryValue context:context];
+    id primaryValue = [mapPrimaryKey MG_isKeyPath] ? [json valueForKeyPath:mapPrimaryKey] : [json valueForKey:mapPrimaryKey];
+    NSManagedObject *object = [self MG_objectWithPrimaryKey:primaryKey primaryValue:primaryValue context:context];
     
     if (!object) {
         object = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
@@ -28,7 +28,7 @@
     }
     
     [map enumerateKeysAndObjectsUsingBlock:^(id jsonKey, id coreDataKey, BOOL *stop) {
-        id value = [jsonKey isKeyPath] ? [json valueForKeyPath:jsonKey] : [json valueForKey:jsonKey];
+        id value = [jsonKey MG_isKeyPath] ? [json valueForKeyPath:jsonKey] : [json valueForKey:jsonKey];
         [object setValue:value forKey:coreDataKey];
     }];
     

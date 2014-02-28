@@ -25,7 +25,7 @@ static NSString * const kDateFormatterCachedKey = @"CachedDateFormatter";
 }
 
 + (instancetype) MG_dateFormatterWithDateFormat:(NSString*)dateFormat {
-    NSDateFormatter *formatter = [self dateFormatter];
+    NSDateFormatter *formatter = [self MG_dateFormatter];
     [formatter setDateFormat:dateFormat];
     return formatter;
 }
