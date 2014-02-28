@@ -19,7 +19,7 @@
 }
 
 + (BOOL) MG_isBelowiOS7 {
-    return [self currentVersion] < 7.0;
+    return [self MG_currentVersion] < 7.0;
 }
 
 @end

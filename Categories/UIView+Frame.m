@@ -11,7 +11,7 @@
 @implementation UIView (Frame)
 
 - (CGFloat)x {
-    return CGself.frame.origin.x;
+    return self.frame.origin.x;
 }
 
 - (void)setX:(CGFloat)x {
