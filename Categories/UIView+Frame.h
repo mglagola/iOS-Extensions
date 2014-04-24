@@ -1,6 +1,6 @@
 //
 //  UIView+Frame.h
-//  
+//
 //
 //  Created by Mark Glagola on 3/19/13.
 //  Copyright (c) 2013 Mark Glagola. All rights reserved.
@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) CGFloat bottom;
 @property (nonatomic, readonly) CGFloat right;
 
+@property (nonatomic) CGSize origin;
 @property (nonatomic) CGSize size;
 
 @property (nonatomic) CGFloat centerX;

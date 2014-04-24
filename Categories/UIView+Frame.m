@@ -1,6 +1,6 @@
 //
 //  UIView+Frame.m
-//  
+//
 //
 //  Created by Mark Glagola on 3/19/13.
 //  Copyright (c) 2013 Mark Glagola. All rights reserved.
@@ -56,6 +56,17 @@
 - (void)setHeight:(CGFloat)height {
     CGRect frame = self.frame;
     frame.size.height = height;
+    self.frame = frame;
+}
+
+
+- (CGPoint)origin {
+    return self.frame.origin;
+}
+
+- (void)setOrigin:(CGPoint)origin {
+    CGRect frame = self.frame;
+    frame.origin = origin;
     self.frame = frame;
 }
 
