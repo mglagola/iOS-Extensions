@@ -9,3 +9,4 @@
 #import "NSManagedObject+Map.h" //need core data for this import
 #import "UIColor+RGB255.h"
 #import "NSDateFormatter+Cached.h"
+#import "UIViewController+Instantiate.h"
