@@ -15,7 +15,7 @@
 }
 
 + (UINavigationController*) MG_instantiateWithNavigationController {
-    UIViewController *controller = [self instantiate];
+    UIViewController *controller = [self MG_instantiate];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
     return nav;
 }
