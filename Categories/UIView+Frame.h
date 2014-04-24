@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) CGFloat bottom;
 @property (nonatomic, readonly) CGFloat right;
 
-@property (nonatomic) CGSize origin;
+@property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize size;
 
 @property (nonatomic) CGFloat centerX;
