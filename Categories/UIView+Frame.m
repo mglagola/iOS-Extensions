@@ -8,6 +8,8 @@
 
 #import "UIView+Frame.h"
 
+#import <CoreGraphics/CoreGraphics.h>
+
 @implementation UIView (Frame)
 
 - (CGFloat)x {
@@ -16,8 +18,11 @@
 
 - (void)setX:(CGFloat)x {
     CGRect frame = self.frame;
-    frame.origin.x = x;
-    self.frame = frame;
+    if(x != frame.origin.x) {
+        frame = CGRectStandardize(frame);
+        frame.origin.x = x;
+        self.frame = frame;
+    }
 }
 
 
@@ -27,8 +32,11 @@
 
 - (void)setY:(CGFloat)y {
     CGRect frame = self.frame;
-    frame.origin.y = y;
-    self.frame = frame;
+    if(y != frame.origin.y) {
+        frame = CGRectStandardize(frame);
+        frame.origin.y = y;
+        self.frame = frame;
+    }
 }
 
 - (CGFloat)bottom {
@@ -45,8 +53,11 @@
 
 - (void)setWidth:(CGFloat)width {
     CGRect frame = self.frame;
-    frame.size.width = width;
-    self.frame = frame;
+    if(width != frame.size.width) {
+        frame = CGRectStandardize(frame);
+        frame.size.width = width;
+        self.frame = frame;
+    }
 }
 
 - (CGFloat)height {
@@ -55,8 +66,11 @@
 
 - (void)setHeight:(CGFloat)height {
     CGRect frame = self.frame;
-    frame.size.height = height;
-    self.frame = frame;
+    if(height != frame.size.height) {
+        frame = CGRectStandardize(frame);
+        frame.size.height = height;
+        self.frame = frame;
+    }
 }
 
 
@@ -66,8 +80,11 @@
 
 - (void)setOrigin:(CGPoint)origin {
     CGRect frame = self.frame;
-    frame.origin = origin;
-    self.frame = frame;
+    if(frame.origin.x != origin.x || frame.origin.y != origin.y) {
+        frame = CGRectStandardize(frame);
+        frame.origin = origin;
+        self.frame = frame;
+    }
 }
 
 
@@ -77,8 +94,11 @@
 
 - (void)setSize:(CGSize)size {
     CGRect frame = self.frame;
-    frame.size = size;
-    self.frame = frame;
+    if(frame.size.width != size.width || frame.size.height != size.height) {
+        frame = CGRectStandardize(frame);
+        frame.size = size;
+        self.frame = frame;
+    }
 }
 
 - (CGFloat) centerX {
